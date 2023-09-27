@@ -4,7 +4,8 @@ import SceneKit
 class PlanetScene: SCNScene {
     private var planetNode: SCNNode?
     private var secondPlanetNode: SCNNode?
-    
+    private var moonRotationAngle: Double = 0
+
     override init() {
         super.init()
         addBackground()
@@ -68,34 +69,29 @@ class PlanetScene: SCNScene {
     
     func rotatePlanetNode(horizontalRotation: Angle, verticalRotation: Angle) {
         // Smoothly interpolate between the current rotations and the new rotations
-        let horizontalRotateAction = SCNAction.rotateBy(x: 0, y: CGFloat(horizontalRotation.radians), z: 0, duration: 0.1)
+        let horizontalRotateAction = SCNAction.rotateBy(x: 0, y: CGFloat(horizontalRotation.radians), z: 0, duration: 0.01)
         let verticalRotateAction = SCNAction.rotateBy(x: CGFloat(verticalRotation.radians), y: 0, z: 0, duration: 0.1)
         let rotateSequence = SCNAction.sequence([horizontalRotateAction, verticalRotateAction])
         
         planetNode?.runAction(rotateSequence)
     }
 
-    func rotateSecondPlanetNode(angle: Float) {
+    func rotateSecondPlanetNode(angle: Double) {
         // Calculate the new position of the moon as it orbits around Venus
-        let radius = Float(1.5) // Adjust this radius based on your desired distance from Venus
+        let radius = 1.5 // Adjust this radius based on your desired distance from Venus
         let x = radius * cos(angle)
         let z = radius * sin(angle)
         
         // Set the new position of the moon
         secondPlanetNode?.position = SCNVector3(x, 0, z)
         
-        // Calculate the rotation angle for the moon's own axis
-        let moonAxisRotationAngle = SCNVector3(0, 1, 0) // Rotate around the Y-axis (adjust axis as needed)
+        // Update the moon's rotation around its own axis
+        let moonRotationSpeed = 0.0025 // Adjust the speed of rotation
+        moonRotationAngle += moonRotationSpeed
         
-        // Create a rotation action to rotate the moon around its own axis
-        let moonRotationAction = SCNAction.rotateBy(
-            x: CGFloat(moonAxisRotationAngle.x * angle),
-            y: CGFloat(moonAxisRotationAngle.y * angle),
-            z: CGFloat(moonAxisRotationAngle.z * angle),
-            duration: 0.1
-        )
-        
-        // Apply the rotation action to the moon while ensuring it always rotates in one direction
-        secondPlanetNode?.runAction(SCNAction.repeatForever(moonRotationAction), forKey: "moon_rotation")
+        // Apply the rotation to the moon's own axis
+        let moonAxisRotation = SCNAction.rotateBy(x: 0, y: CGFloat(0.1), z: 0, duration: 0)
+        secondPlanetNode?.runAction(moonAxisRotation)
     }
+
 }

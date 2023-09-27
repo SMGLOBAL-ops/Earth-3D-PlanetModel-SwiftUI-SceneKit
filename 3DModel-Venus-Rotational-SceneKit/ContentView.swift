@@ -8,6 +8,7 @@ struct PlanetView: View {
     @State private var currentDragLocation: CGPoint? = nil
     @State private var horizontalRotationAngle: Angle = .zero
     @State private var verticalRotationAngle: Angle = .zero
+    @State private var moonRotationAngle: Double = 0
     
     // Add a state variable to control the rotation of the second planet
     @State private var secondPlanetRotationAngle: Double = 0
@@ -40,9 +41,9 @@ struct PlanetView: View {
                     // Rotate the planet node smoothly
                     scene.rotatePlanetNode(horizontalRotation: horizontalRotationAngle, verticalRotation: verticalRotationAngle)
                     
-                    // Rotate the second planet (moon) around the first planet
+                    // Rotate the second planet (moon) around the first planet (Venus)
                     secondPlanetRotationAngle += 0.005 // Adjust the speed of rotation
-                    scene.rotateSecondPlanetNode(angle: Float(secondPlanetRotationAngle))
+                    scene.rotateSecondPlanetNode(angle: secondPlanetRotationAngle)
                 }
             // Background Image overlay
             Image("8k_starsMilkyWay") // Replace with your image asset name
