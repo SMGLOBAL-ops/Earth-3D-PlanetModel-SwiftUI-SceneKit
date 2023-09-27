@@ -7,7 +7,7 @@ https://github.com/SMGLOBAL-ops/Venus-3D-PlanetModel-SceneKit/assets/68763259/38
 
 ## Overview
 
-The **Planet Rotation Simulation** is a 3D visualization project designed as a fundamental exploration of celestial mechanics and SceneKit. It offers an immersive representation of the dynamic interaction between two celestial bodies: a smaller planet (moon) orbiting a larger planet (Venus). Notably, it accurately simulates the moon's rotation on its own axis as it orbits the primary planet, providing a captivating and educational exploration of celestial phenomena.
+The **Planet Rotation Simulation** is a 3D visualization project designed as a fundamental exploration of celestial mechanics and SceneKit. It offers an immersive representation of the dynamic interaction between two celestial bodies: a smaller satellite mass (moon) orbiting a larger planet (Venus). Notably, it simulates the moon's rotation on its own axis as it orbits the primary planet, providing a captivating and educational exploration of celestial phenomena.
 
 **Note:** This project serves as a basic simulation for studying SceneKit and lays the foundation for an upcoming expansion into a full-fledged **Solar System Model**.
 
@@ -43,7 +43,7 @@ Before you dive into the simulation, ensure you have the following prerequisites
 
 - **Interactive Exploration:** Utilize your mouse or touch gestures to rotate the view, enabling you to observe the celestial bodies from different perspectives.
 
-- **Orbital Realism:** Pay close attention to the smaller planet (moon) as it elegantly orbits the larger planet (Venus). The orbits are meticulously simulated, showcasing the precision of celestial mechanics.
+- **Orbital Realism:** Pay close attention to the smaller satellite mass (moon) as it elegantly orbits the larger planet (Venus). The orbits are meticulously simulated, showcasing the precision of celestial mechanics.
 
 - **SceneKit Study:** This project provides an excellent opportunity for studying SceneKit, Apple's 3D graphics framework. Explore the code and gain insights into how to create 3D simulations and visualizations.
 
@@ -58,7 +58,11 @@ Contributions to this project are encouraged! If you're interested in enhancing 
    ```sh
    git checkout -b feature/my-feature
 
-Certainly! Here's the provided text converted into markdown:
+## Improvements TODO
+
+- Add POV rotational motion
+- Add default rotational speed for celestial objects
+- Further development e.g. Solar System
 
 License
 This project is licensed under the MIT License. Refer to the LICENSE file for the complete license terms.
