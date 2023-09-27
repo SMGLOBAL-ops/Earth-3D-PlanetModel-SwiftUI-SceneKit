@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4CB35212AC3912100C6C292 /* _DModel_Venus_Rotational_SceneKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB35202AC3912100C6C292 /* _DModel_Venus_Rotational_SceneKitApp.swift */; };
-		E4CB35232AC3912100C6C292 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB35222AC3912100C6C292 /* ContentView.swift */; };
-		E4CB35252AC3912100C6C292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CB35242AC3912100C6C292 /* Assets.xcassets */; };
+		E46E0C422AC47B0300FA71FC /* Planetania.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E0C412AC47B0300FA71FC /* Planetania.swift */; };
+		E46E0C482AC47B4900FA71FC /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E0C472AC47B4900FA71FC /* PlanetView.swift */; };
+		E46E0C4A2AC47C1000FA71FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46E0C492AC47C1000FA71FC /* Assets.xcassets */; };
 		E4CB35282AC3912100C6C292 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CB35272AC3912100C6C292 /* Preview Assets.xcassets */; };
-		E4CB352F2AC3A1E200C6C292 /* PlanetScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB352E2AC3A1E200C6C292 /* PlanetScene.swift */; };
 		E4CB35312AC3A61900C6C292 /* AnimationTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB35302AC3A61900C6C292 /* AnimationTicker.swift */; };
+		E4F3C4CD2AC4804000251974 /* PlanetScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3C4CC2AC4804000251974 /* PlanetScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E46E0C412AC47B0300FA71FC /* Planetania.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Planetania.swift; path = ../../Planetania/Planetania/Planetania.swift; sourceTree = "<group>"; };
+		E46E0C472AC47B4900FA71FC /* PlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanetView.swift; path = ../../Planetania/Planetania/PlanetView.swift; sourceTree = "<group>"; };
+		E46E0C492AC47C1000FA71FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Planetania/Planetania/Assets.xcassets; sourceTree = "<group>"; };
 		E4CB351D2AC3912100C6C292 /* 3DModel-Venus-Rotational-SceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3DModel-Venus-Rotational-SceneKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4CB35202AC3912100C6C292 /* _DModel_Venus_Rotational_SceneKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DModel_Venus_Rotational_SceneKitApp.swift; sourceTree = "<group>"; };
-		E4CB35222AC3912100C6C292 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E4CB35242AC3912100C6C292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4CB35272AC3912100C6C292 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E4CB352E2AC3A1E200C6C292 /* PlanetScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetScene.swift; sourceTree = "<group>"; };
 		E4CB35302AC3A61900C6C292 /* AnimationTicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTicker.swift; sourceTree = "<group>"; };
+		E4F3C4CC2AC4804000251974 /* PlanetScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 		E4CB351F2AC3912100C6C292 /* 3DModel-Venus-Rotational-SceneKit */ = {
 			isa = PBXGroup;
 			children = (
-				E4CB35202AC3912100C6C292 /* _DModel_Venus_Rotational_SceneKitApp.swift */,
-				E4CB35222AC3912100C6C292 /* ContentView.swift */,
-				E4CB352E2AC3A1E200C6C292 /* PlanetScene.swift */,
+				E46E0C412AC47B0300FA71FC /* Planetania.swift */,
+				E4F3C4CC2AC4804000251974 /* PlanetScene.swift */,
+				E46E0C472AC47B4900FA71FC /* PlanetView.swift */,
 				E4CB35302AC3A61900C6C292 /* AnimationTicker.swift */,
-				E4CB35242AC3912100C6C292 /* Assets.xcassets */,
+				E46E0C492AC47C1000FA71FC /* Assets.xcassets */,
 				E4CB35262AC3912100C6C292 /* Preview Content */,
 			);
 			path = "3DModel-Venus-Rotational-SceneKit";
@@ -132,7 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4CB35282AC3912100C6C292 /* Preview Assets.xcassets in Resources */,
-				E4CB35252AC3912100C6C292 /* Assets.xcassets in Resources */,
+				E46E0C4A2AC47C1000FA71FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,10 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4CB35232AC3912100C6C292 /* ContentView.swift in Sources */,
-				E4CB352F2AC3A1E200C6C292 /* PlanetScene.swift in Sources */,
+				E46E0C422AC47B0300FA71FC /* Planetania.swift in Sources */,
 				E4CB35312AC3A61900C6C292 /* AnimationTicker.swift in Sources */,
-				E4CB35212AC3912100C6C292 /* _DModel_Venus_Rotational_SceneKitApp.swift in Sources */,
+				E4F3C4CD2AC4804000251974 /* PlanetScene.swift in Sources */,
+				E46E0C482AC47B4900FA71FC /* PlanetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

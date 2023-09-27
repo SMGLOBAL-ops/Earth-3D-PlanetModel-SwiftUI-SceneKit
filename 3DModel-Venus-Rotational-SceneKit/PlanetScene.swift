@@ -1,9 +1,11 @@
+
 import SwiftUI
 import SceneKit
 
 class PlanetScene: SCNScene {
     private var planetNode: SCNNode?
     private var secondPlanetNode: SCNNode?
+    private var earthRotationAngle: Double = 0
     private var moonRotationAngle: Double = 0
 
     override init() {
@@ -22,14 +24,16 @@ class PlanetScene: SCNScene {
     func configureCamera() {
         self.rootNode.position = SCNVector3(x: 0, y: 0, z: -8)
     }
-    
+
     func addBackground() {
-        background.contents = UIColor.black
+        if let backgroundImage = UIImage(named: "8k_starsMilkyWay") {
+            self.background.contents = backgroundImage
+        }
     }
-    
+
     func addPlanetNode() {
         let planetMaterial = SCNMaterial()
-        planetMaterial.diffuse.contents = UIImage(named: "4k_venus")
+        planetMaterial.diffuse.contents = UIImage(named: "earth_nightTime")
         
         let planetGeometry = SCNSphere(radius: 1)
         planetGeometry.materials = [planetMaterial]
@@ -42,14 +46,14 @@ class PlanetScene: SCNScene {
     
     func addSecondPlanetNode() {
         let secondPlanetMaterial = SCNMaterial()
-        secondPlanetMaterial.diffuse.contents = UIImage(named: "8k_moon") // Replace with the moon's texture
+        secondPlanetMaterial.diffuse.contents = UIImage(named: "8k_moon") // Replace with the Moon's texture
         
         let secondPlanetGeometry = SCNSphere(radius: 0.2) // Adjust the size as needed
         secondPlanetGeometry.materials = [secondPlanetMaterial]
         
         let secondPlanetNode = SCNNode(geometry: secondPlanetGeometry)
         
-        // Position the second planet (moon) relative to the first planet (Venus)
+        // Position the second planet (moon) relative to the first planet (Earth)
         secondPlanetNode.position = SCNVector3(1.5, 0, 0) // Adjust the position as needed
         
         self.rootNode.addChildNode(secondPlanetNode)
@@ -73,25 +77,29 @@ class PlanetScene: SCNScene {
         let verticalRotateAction = SCNAction.rotateBy(x: CGFloat(verticalRotation.radians), y: 0, z: 0, duration: 0.1)
         let rotateSequence = SCNAction.sequence([horizontalRotateAction, verticalRotateAction])
         
+        let earthRotationSpeed = 0.0025
+        earthRotationAngle += earthRotationSpeed
+        
+        let earthAxisRotation =  SCNAction.rotateBy(x: 0, y: CGFloat(-0.01), z: 0, duration: 0)
+        planetNode?.runAction(earthAxisRotation)
         planetNode?.runAction(rotateSequence)
     }
 
     func rotateSecondPlanetNode(angle: Double) {
-        // Calculate the new position of the moon as it orbits around Venus
-        let radius = 1.5 // Adjust this radius based on your desired distance from Venus
+        // Calculate the new position of the Moon as it orbits around Earth
+        let radius = 1.5 // Adjust this radius based on your desired distance from Earth
         let x = radius * cos(angle)
         let z = radius * sin(angle)
         
         // Set the new position of the moon
         secondPlanetNode?.position = SCNVector3(x, 0, z)
         
-        // Update the moon's rotation around its own axis
+        // Update the Moon's rotation around its own axis
         let moonRotationSpeed = 0.0025 // Adjust the speed of rotation
         moonRotationAngle += moonRotationSpeed
         
-        // Apply the rotation to the moon's own axis
-        let moonAxisRotation = SCNAction.rotateBy(x: 0, y: CGFloat(0.1), z: 0, duration: 0)
+        // Apply the rotation to the Moon's own axis
+        let moonAxisRotation = SCNAction.rotateBy(x: 0, y: CGFloat(0.01), z: 0, duration: 0)
         secondPlanetNode?.runAction(moonAxisRotation)
     }
-
 }
