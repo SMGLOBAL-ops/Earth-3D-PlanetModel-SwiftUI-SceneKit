@@ -62,7 +62,7 @@ Contributions to this project are encouraged! If you're interested in enhancing 
 ## Improvements TODO
 
 - Add POV rotational motion
-- Add default rotational speed for celestial objects
+- Add Sunlight-Planet surface interaction
 - Further development e.g. Solar System
 
 License
