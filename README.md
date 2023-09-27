@@ -1,7 +1,9 @@
 # Planet Rotation Simulation
 
 
-[Earth_Moon_SceneKit_Demo.mov.zip](https://github.com/SMGLOBAL-ops/Earth-3D-PlanetModel-SwiftUI-SceneKit/files/12740573/Earth_Moon_SceneKit_Demo.mov.zip)
+
+https://github.com/SMGLOBAL-ops/Earth-3D-PlanetModel-SwiftUI-SceneKit/assets/68763259/a2ec3379-4739-4b7d-94f9-4a11f8b985c4
+
 
 
 ## Overview
